@@ -1,0 +1,12 @@
+version: '3'
+services:
+  dbt-pipeline:
+    build:
+      context: .
+      target: dbt-postgres
+    image: dbt/postgres
+    volumes:
+      - .:/usr/app
+      - ~/.dbt/:/root/.dbt/
+    network_mode: host
+    
