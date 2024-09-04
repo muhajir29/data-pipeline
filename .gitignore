@@ -57,7 +57,7 @@ override.tf.json
 terraform.rc
 *.json
 *.csv.gz
-*.csv
+# *.csv
 
 
 
