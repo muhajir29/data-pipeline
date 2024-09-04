@@ -1,3 +1,16 @@
+
+# front-end
+orchestrator/node_modules
+orchestrator/.npmrc
+
+# Scratch files
+orchestrator/scratch*
+orchestrator/mage_data*
+orchestrator/*secrets*.json
+orchestrator/magic-zoomcamp
+orchestrator/*.json
+
+
 env_pipeline/*
 # you shouldn't commit these into source control
 # these are the default directory names, adjust/add to fit your needs
