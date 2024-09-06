@@ -1,0 +1,13 @@
+# https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml
+
+data_pipeline:
+  target: staging
+  outputs:
+    dev:
+      dbname: "{{ env_var('POSTGRES_DBNAME')}}"
+      host: "{{ env_var('POSTGRES_HOST')}}"
+      password: "{{ env_var('POSTGRES_PASSWORD')}}"
+      port: 5432
+      schema: "{{ env_var('POSTGRES_SCHEMA')}}"
+      type: postgres
+      user: "{{ env_var('POSTGRES_USER')}}"

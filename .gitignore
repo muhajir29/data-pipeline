@@ -7,7 +7,7 @@ orchestrator/.npmrc
 orchestrator/scratch*
 orchestrator/mage_data*
 orchestrator/*secrets*.json
-orchestrator/datapipeline
+
 orchestrator/*.json
 
 
