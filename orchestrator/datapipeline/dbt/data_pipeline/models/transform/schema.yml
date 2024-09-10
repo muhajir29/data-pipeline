@@ -1,0 +1,171 @@
+version: 2
+
+models:
+  - name: analytic_data
+    description: "This model contains data related to sales analytics including revenue, profit, and discount information."
+    columns:
+      - name: order_id
+        data_type: integer
+        description: "Unique identifier for each customer order."
+
+      - name: sales_date
+        data_type: date
+        description: "The date when the sale occurred."
+
+      - name: menu_id
+        data_type: integer
+        description: "Unique identifier for the menu item being sold."
+
+      - name: brand
+        data_type: text
+        description: "The brand associated with the menu item."
+
+      - name: name
+        data_type: text
+        description: "Name of the menu item."
+
+      - name: price
+        data_type: integer
+        description: "Price of the menu item."
+
+      - name: quantity
+        data_type: integer
+        description: "Number of units sold for the menu item."
+
+      - name: cogs
+        data_type: integer
+        description: "Cost of Goods Sold (COGS) for the menu item."
+
+      - name: gross_revenue
+        data_type: integer
+        description: "Total revenue before discounts are applied."
+
+      - name: disc_percentage
+        data_type: double precision
+        description: "The percentage discount applied to the item."
+
+      - name: max_disc
+        data_type: integer
+        description: "Maximum discount value allowed for this sale."
+
+      - name: disc_applied
+        data_type: double precision
+        description: "Actual discount value applied to the item."
+
+      - name: net_revenue
+        data_type: double precision
+        description: "Revenue after discounts are applied."
+
+      - name: net_profit
+        data_type: double precision
+        description: "Profit made after all costs and discounts are accounted for."
+
+      - name: profit_per_unit
+        data_type: double precision
+        description: "Profit made per unit of the menu item sold."
+
+      - name: discount_percentage_applied
+        data_type: double precision
+        description: "The percentage discount actually applied to the item."
+
+      - name: profit_margin
+        data_type: double precision
+        description: "The percentage of profit relative to revenue."
+
+      - name: markup_percentage
+        data_type: integer
+        description: "The percentage increase from cost to price."
+
+  - name: order_menu
+    description: "This model contains data related to the details of the menu items within each order."
+    columns:
+      - name: order_id
+        data_type: integer
+        description: "Unique identifier for each customer order."
+
+      - name: menu_id
+        data_type: integer
+        description: "Unique identifier for the menu item being ordered."
+
+      - name: quantity
+        data_type: integer
+        description: "Number of units of the menu item in the order."
+
+      - name: sales_date
+        data_type: date
+        description: "The date when the sale occurred."
+
+      - name: brand
+        data_type: text
+        description: "The brand associated with the menu item."
+
+      - name: name
+        data_type: text
+        description: "Name of the menu item."
+
+      - name: price
+        data_type: integer
+        description: "Price of the menu item."
+
+      - name: cogs
+        data_type: integer
+        description: "Cost of Goods Sold (COGS) for the menu item."
+
+      - name: effective_date
+        data_type: date
+        description: "The date when the menu item became available."
+
+  - name: order_menu_promotion
+    description: "This model contains data related to promotions applied to menu items in orders."
+    columns:
+      - name: order_id
+        data_type: integer
+        description: "Unique identifier for each customer order."
+
+      - name: menu_id
+        data_type: integer
+        description: "Unique identifier for the menu item being ordered."
+
+      - name: quantity
+        data_type: integer
+        description: "Number of units of the menu item in the order."
+
+      - name: sales_date
+        data_type: date
+        description: "The date when the sale occurred."
+
+      - name: brand
+        data_type: text
+        description: "The brand associated with the menu item."
+
+      - name: name
+        data_type: text
+        description: "Name of the menu item."
+
+      - name: price
+        data_type: integer
+        description: "Price of the menu item."
+
+      - name: cogs
+        data_type: integer
+        description: "Cost of Goods Sold (COGS) for the menu item."
+
+      - name: effective_date_menu
+        data_type: date
+        description: "The date when the menu item promotion became effective."
+
+      - name: start_date_promotion
+        data_type: date
+        description: "Start date of the promotion applied to the item."
+
+      - name: end_date_promotion
+        data_type: date
+        description: "End date of the promotion applied to the item."
+
+      - name: disc_value
+        data_type: double precision
+        description: "Discount value applied to the menu item during the promotion."
+
+      - name: max_disc
+        data_type: integer
+        description: "Maximum discount allowed for the menu item."

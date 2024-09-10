@@ -27,6 +27,11 @@ models:
   data_pipeline:
     cleaning:
       +materialized: view
+    transform:
+      +materialized: table
+    transform_mart:
+      +materialized: table
+      +schema: mart
 
 
 seeds:

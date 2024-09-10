@@ -1,0 +1,108 @@
+version: 2
+
+models:
+  - name: daily_sales_trend
+    description: "Aggregates daily sales data, including total items sold, orders, discounts, revenue, and profit."
+    columns:
+      - name: sales_date
+        data_type: date
+        description: "The date for the sales data."
+      - name: total_items_sold
+        data_type: bigint
+        description: "Total number of items sold on the given date."
+      - name: total_order
+        data_type: bigint
+        description: "Total number of orders placed on the given date."
+      - name: total_discount_applied
+        data_type: double precision
+        description: "Total discount applied across all orders on the given date."
+      - name: total_gross_revenue
+        data_type: bigint
+        description: "Gross revenue before discounts on the given date."
+      - name: total_net_revenue
+        data_type: double precision
+        description: "Net revenue after discounts on the given date."
+      - name: total_profit
+        data_type: double precision
+        description: "Total profit calculated as net revenue minus cost of goods sold (COGS) on the given date."
+      - name: cogs
+        data_type: bigint
+        description: "Total cost of goods sold on the given date."
+
+  - name: weekly_sales_trend
+    description: "Aggregates weekly sales data, including total items sold, orders, discounts, revenue, and profit."
+    columns:
+      - name: week_start
+        data_type: timestamp with time zone
+        description: "Start date of the week for the sales data."
+      - name: total_items_sold
+        data_type: bigint
+        description: "Total number of items sold during the week."
+      - name: total_order
+        data_type: bigint
+        description: "Total number of orders placed during the week."
+      - name: total_discount_applied
+        data_type: double precision
+        description: "Total discount applied across all orders during the week."
+      - name: total_gross_revenue
+        data_type: bigint
+        description: "Gross revenue before discounts during the week."
+      - name: total_net_revenue
+        data_type: double precision
+        description: "Net revenue after discounts during the week."
+      - name: total_profit
+        data_type: double precision
+        description: "Total profit calculated as net revenue minus cost of goods sold (COGS) during the week."
+      - name: cogs
+        data_type: bigint
+        description: "Total cost of goods sold during the week."
+
+  - name: month_to_date
+    description: "Aggregates sales data from the start of the month to the current date, including total items sold, orders, discounts, revenue, and profit."
+    columns:
+      - name: month_start
+        data_type: timestamp with time zone
+        description: "Start date of the month for the sales data."
+      - name: total_order
+        data_type: bigint
+        description: "Total number of orders placed from the start of the month to the current date."
+      - name: total_discount_applied
+        data_type: double precision
+        description: "Total discount applied across all orders from the start of the month to the current date."
+      - name: total_gross_revenue
+        data_type: bigint
+        description: "Gross revenue before discounts from the start of the month to the current date."
+      - name: total_net_revenue
+        data_type: double precision
+        description: "Net revenue after discounts from the start of the month to the current date."
+      - name: total_profit
+        data_type: double precision
+        description: "Total profit calculated as net revenue minus cost of goods sold (COGS) from the start of the month to the current date."
+      - name: cogs
+        data_type: bigint
+        description: "Total cost of goods sold from the start of the month to the current date."
+
+  - name: year_to_date
+    description: "Aggregates sales data from the start of the year to the current date, including total items sold, orders, discounts, revenue, and profit."
+    columns:
+      - name: year_start
+        data_type: timestamp with time zone
+        description: "Start date of the year for the sales data."
+      - name: total_order
+        data_type: bigint
+        description: "Total number of orders placed from the start of the year to the current date."
+      - name: total_discount_applied
+        data_type: double precision
+        description: "Total discount applied across all orders from the start of the year to the current date."
+      - name: total_gross_revenue
+        data_type: bigint
+        description: "Gross revenue before discounts from the start of the year to the current date."
+      - name: total_net_revenue
+        data_type: double precision
+        description: "Net revenue after discounts from the start of the year to the current date."
+      - name: total_profit
+        data_type: double precision
+        description: "Total profit calculated as net revenue minus cost of goods sold (COGS) from the start of the year to the current date."
+      - name: cogs
+        data_type: bigint
+        description: "Total cost of goods sold from the start of the year to the current date."

@@ -9,19 +9,19 @@ WITH data AS (
 ), 
 discount_applied AS (
     SELECT 
-        data.*, 
+        dt.*, 
         CASE 
-            WHEN (gross_revenue * disc_value) > max_disc 
-            THEN max_disc 
-            ELSE (gross_revenue * disc_value)
+            WHEN dt.disc_value = 0 THEN 0
+            WHEN (dt.gross_revenue * dt.disc_value) > dt.max_disc THEN dt.max_disc 
+            ELSE (dt.gross_revenue * dt.disc_value)
         END AS discount_applied
     FROM 
-        data
+        data dt
 ), 
 total_payment AS (
     SELECT 
         da.*, 
-        da.gross_revenue - da.discount_applied AS net_revenue
+        da.gross_revenue - da.discount_applied  AS net_revenue
     FROM 
         discount_applied da
 )
@@ -39,7 +39,7 @@ SELECT
     tp.max_disc, 
     tp.discount_applied AS disc_applied, 
     tp.net_revenue,
-    (tp.net_revenue - tp.cogs) AS profit, 
+    (tp.net_revenue - tp.cogs) AS net_profit, 
     (tp.net_revenue - tp.cogs) / tp.quantity AS profit_per_unit, 
     (tp.discount_applied / tp.gross_revenue) AS discount_percentage_applied, 
     (tp.net_revenue - tp.cogs) / tp.net_revenue AS profit_margin, 
