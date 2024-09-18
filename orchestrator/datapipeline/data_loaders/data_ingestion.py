@@ -7,7 +7,12 @@ from datapipeline.data_loaders.script_code.ingestion import Ingestion
 
 @data_loader
 def load_data(*args, **kwargs):
+    date = kwargs.get('execution_date')
+    date = date.strftime('%Y_%m_%d')
+    print(date)
+
     list_table_name = ['menu.csv', 'order.csv', 'promotion.csv']
+    
     link_source = "https://raw.githubusercontent.com/muhajir29/data-pipeline/main/data"
     folder_output = "/home/src/datapipeline/dbt/data_pipeline/seeds"
 

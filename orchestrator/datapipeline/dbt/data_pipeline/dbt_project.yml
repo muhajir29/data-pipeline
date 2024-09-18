@@ -40,3 +40,5 @@ seeds:
     order:
     promotion:
       
+vars:
+  run_date: "2021-04-25" 

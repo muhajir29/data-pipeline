@@ -10,7 +10,7 @@ blocks:
   language: python
   name: data_ingestion
   retry_config: null
-  status: updated
+  status: failed
   timeout: null
   type: data_loader
   upstream_blocks: []
